@@ -1,4 +1,5 @@
 import streams from "../apis/streams";
+import history from "../history";
 import {
   CREATE_STREAM,
   FETCH_STREAMS,
@@ -28,6 +29,7 @@ export const createStream = formValues => async (dispatch, getState) => {
   dispatch({ type: CREATE_STREAM, payload: response.data });
 
   // Programmatic navigation here
+  history.push("/");
 };
 
 export const fetchStreams = () => async dispatch => {
